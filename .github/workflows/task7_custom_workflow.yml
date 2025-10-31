@@ -1,16 +1,13 @@
-name: Generate Release Notes
+name: Task 7 - Custom Workflow
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 jobs:
-  release:
+  motivate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Generate Release Notes
-        uses: release-drafter/release-drafter@v6
-        with:
-          config-name: release-drafter.yml
+      - name: Show Custom Message
+        run: echo "Keep going! Code pushed successfully!"
