@@ -1,4 +1,4 @@
-name: Task 7 - Custom Workflow
+name: Custom Workflow
 
 on:
   push:
