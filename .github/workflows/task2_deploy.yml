@@ -1,4 +1,4 @@
-name: Task 2 - Deploy to Vercel
+name: Deploy to Vercel
 
 on:
   push:
