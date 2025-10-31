@@ -1,28 +1,33 @@
-name: Task 6 - Deploy Docs (Simple)
+name: Task 6 - Documentation Deployment
 
 on:
   push:
-    paths:
-      - 'docs/**'
-      - '.github/workflows/task6_documentation.yml'
     branches:
       - main
+    paths:
+      - "docs/**"
+      - ".github/workflows/task6_documentation.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  deploy:
+  deploy-docs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Pages (required)
+      - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload artifact (docs)
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload documentation artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./docs
+          path: docs
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
